@@ -34,7 +34,7 @@ func main() {
 		}
 	}()
 	tlsConf := tls.Config{InsecureSkipVerify: true}
-	c, err := xmpp.NewClient(&jid, *pw, tlsConf, nil, xmpp.Presence{}, stat)
+	c, err := xmpp.NewClient(&jid, *pw, &tlsConf, nil, xmpp.Presence{}, stat)
 	if err != nil {
 		log.Fatalf("NewClient(%v): %v", jid, err)
 	}
